@@ -1,0 +1,72 @@
+/*
+  ========================================
+  ATTRACTIVE CTA / TRUST BANNER SECTION
+  ========================================
+*/
+.cta-section {
+    position: relative;
+    padding: 6rem 0; /* Adjusted padding for better balance */
+    background-position: center center;
+    background-size: cover;
+    background-attachment: fixed;
+  }
+  
+  .cta-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    /* A subtle gradient adds more depth than a solid color */
+    background: linear-gradient(135deg, rgba(13, 45, 78, 0.9), rgba(19, 57, 99, 0.85));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .cta-section h1 {
+    line-height: 1.2;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  }
+  
+  .cta-section .lead {
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.7;
+  }
+  
+  /* Elegant Divider Line */
+  .cta-divider {
+    border: 0;
+    height: 1px;
+    background: rgba(255, 255, 255, 0.2);
+    max-width: 200px;
+    margin: 0 auto;
+  }
+  
+  /* Stat Box Styling */
+  .stat-box {
+    padding: 1rem;
+    transition: transform 0.3s ease;
+  }
+  .stat-box:hover {
+    transform: translateY(-10px); /* Lifts the box on hover */
+  }
+  
+  .stat-icon {
+    font-size: 3rem; /* Large, prominent icons */
+    color: var(--c-primary); /* Uses the theme's bright blue color */
+    margin-bottom: 1rem;
+  }
+  
+  .stat-number {
+    font-size: 3.5rem;
+    line-height: 1;
+  }
+  
+  .stat-label {
+    font-size: 1rem;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+  }

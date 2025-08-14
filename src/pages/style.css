@@ -1,0 +1,285 @@
+/*
+  ========================================
+  PROFESSIONAL MEDICAL THEME
+  ========================================
+  1. Root Variables & Global Styles
+  2. Utilities (Spinner, Back to Top)
+  3. Header & Navigation
+  4. Hero Carousel
+  5. Content Sections (Mission & Vision)
+*/
+
+
+/*
+  ========================================
+  1. ROOT VARIABLES & GLOBAL STYLES
+  ========================================
+*/
+
+:root {
+    --c-primary: #00AEEF;      /* A brighter, modern blue from the new design */
+    --c-primary-dark: #008fbf;  /* A darker shade for hovers */
+    --c-text-dark: #343a40;    /* Standard dark text */
+    --c-text-light: #6c757d;   /* Grey for secondary text */
+    --c-background: #F8F9FA;
+    --c-white: #FFFFFF;
+    --font-body: 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+    --border-radius: 6px;
+  }
+  html { scroll-behavior: smooth; }
+  body { font-family: var(--font-body); color: var(--c-text-dark); }
+  
+  
+  
+  /*
+    ========================================
+    2. UTILITIES (SPINNER, BACK TO TOP)
+    ========================================
+  */
+  
+  /* --- Loading Spinner --- */
+  #spinner {
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 0.5s ease-out, visibility 0.5s ease-out;
+  }
+  #spinner:not(.show) {
+    opacity: 0;
+    visibility: hidden;
+  }
+  
+  /* --- Back to Top Button --- */
+  .back-to-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    background-color: var(--c-primary);
+    border-radius: 50%; /* A circle is a common, friendly shape */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    z-index: 1080;
+    opacity: 0;
+    transform: translateY(20px);
+    visibility: hidden;
+    transition: all 0.3s ease-in-out;
+  }
+  .back-to-top.show {
+    opacity: 1;
+    transform: translateY(0);
+    visibility: visible;
+  }
+  .back-to-top:hover {
+    background-color: #004a80; /* Darken on hover */
+    transform: translateY(-4px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+  }
+  
+  
+/*
+  ========================================
+  2. HEADER & TOP BAR
+  ========================================
+*/
+.header-top {
+    position: relative;
+    font-size: 0.9rem;
+    padding: 0.5rem 0;
+    color: var(--c-text-dark);
+    /* THIS LINE SETS THE BACKGROUND FOR THE ENTIRE TOP BAR, INCLUDING THE DATE/TIME SECTION. */
+    background-color: #d6e9f6; 
+    overflow: hidden; /* Important for the diagonal shape */
+  }
+  
+  .info-left {
+    position: relative;
+    z-index: 2; /* Ensures it's above the blue diagonal shape */
+  }
+  
+  .info-right {
+    position: relative;
+    z-index: 2;
+    padding-right: 15px;
+  }
+  
+  .info-right a {
+    color: var(--c-white);
+    text-decoration: none;
+    transition: opacity 0.3s;
+  }
+  
+  .info-right a:hover {
+    opacity: 0.9;
+  }
+  
+  /* The diagonal blue background shape */
+  .header-top::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: -10%; 
+    width: 50%;
+    height: 100%;
+    background-color: var(--c-primary);
+    transform: skewX(-30deg);
+    z-index: 1; /* Sits behind the text but above the main background */
+  }
+  
+  /*
+    ========================================
+    4. HERO CAROUSEL
+    ========================================
+  */
+  
+  .carousel .item img {
+    height: 75vh; /* Slightly less tall for better balance on most screens */
+  }
+  
+  /* Replace the harsh overlay with a more professional gradient */
+  .carousel-caption {
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background: linear-gradient(90deg, rgba(0, 40, 75, 0.7) 0%, rgba(0, 40, 75, 0.4) 100%);
+    padding: 2rem;
+  }
+  
+  .carousel-caption h1 {
+    max-width: 800px;
+    font-size: 3rem; /* Adjust size for impact */
+    font-weight: 600; /* A strong but not overly bold weight */
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+  }
+  
+  
+ /*
+  ========================================
+  6. ENHANCED CONTENT SECTIONS (Mission & Vision)
+  ========================================
+*/
+
+/* Card styling from previous step (no changes needed here, just for context) */
+section.py-5 {
+    background-color: var(--c-background);
+  }
+  
+  .p-4.bg-white.shadow.rounded {
+    border: 1px solid #E9ECEF;
+    border-radius: var(--border-radius);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05) !important;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    height: 100%;
+  }
+  
+  .p-4.bg-white.shadow.rounded:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08) !important;
+  }
+  
+  /* --- NEW STYLES FOR MISSION & VISION ICONS --- */
+  .mission-vision-icon {
+    flex-shrink: 0; /* Prevents the icon container from shrinking */
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background-color: var(--c-primary-light); /* Uses the light blue from our theme */
+    color: var(--c-primary); /* Uses the main blue for the icon itself */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  }
+  
+  .p-4.bg-white.shadow.rounded h2 {
+    color: var(--c-primary);
+    font-weight: 600;
+  }
+  
+  .p-4.bg-white.shadow.rounded p {
+    line-height: 1.7;
+    color: var(--c-text-light);
+  }
+  
+  /* Remove the decorative line under the heading as the icon serves as the primary visual element */
+  .p-4.bg-white.shadow.rounded h2::after {
+    display: none;
+  }
+
+
+  /*
+  ========================================
+  7. DESIGN ENHANCEMENTS (V3)
+  ========================================
+*/
+
+/* --- Refined Hero Carousel --- */
+.hero-caption {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 1rem;
+}
+
+/* Override the old carousel image height */
+.carousel .item img {
+  height: 90vh; /* Taller hero section for more impact */
+  object-fit: cover;
+}
+
+.hero-caption .btn-primary {
+  box-shadow: 0 4px 15px rgba(0, 174, 239, 0.3);
+  transition: all 0.3s ease;
+}
+
+.hero-caption .btn-primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(0, 174, 239, 0.4);
+}
+
+/* --- Reusable Section Title --- */
+.section-title h1 {
+  font-weight: 700;
+}
+
+/* --- Refined Back-to-Top Button --- */
+/* (This replaces any previous .back-to-top styles for consistency) */
+.back-to-top {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  z-index: 1080;
+  opacity: 0;
+  transform: translateY(20px);
+  visibility: hidden;
+  transition: all 0.3s ease-in-out;
+}
+.back-to-top.show {
+  opacity: 1;
+  transform: translateY(0);
+  visibility: visible;
+}
+.back-to-top:hover {
+  background-color: var(--c-primary-dark);
+  transform: translateY(-4px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+}

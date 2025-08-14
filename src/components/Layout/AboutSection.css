@@ -1,0 +1,68 @@
+/*
+  ========================================
+  ABOUT US SECTION STYLES
+  ========================================
+*/
+
+.about-section {
+    background-color: #ffffff; /* Clean white background */
+  }
+  
+  /* Custom Title with two-color underline */
+  .section-title-alt {
+    position: relative;
+    padding-bottom: 10px;
+  }
+  
+  .section-title-alt h6 {
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--c-primary); /* Use theme's primary color */
+  }
+  
+  /* Blue part of the underline */
+  .section-title-alt::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 50px;
+    height: 3px;
+    background-color: var(--c-primary);
+  }
+  
+  /* Accent (Orange) part of the underline */
+  .section-title-alt::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 55px; /* Position it after the blue line with a gap */
+    width: 25px;
+    height: 3px;
+    background-color: #FD7E14; /* A professional, warm orange */
+  }
+  
+  /* Main heading styling */
+  .about-section .display-5 {
+    color: #0d2d4e; /* Dark, professional navy blue for high contrast */
+    line-height: 1.2;
+  }
+  
+  /* Italicized lead paragraph */
+  .about-paragraph {
+    font-style: italic;
+    color: #6c757d; /* Muted grey text */
+  }
+  
+  /* Checklist items */
+  .checklist-icon {
+    font-size: 1.25rem; /* Make the checkmark icon stand out */
+  }
+  
+  /* Image styling */
+  .about-image-wrapper img {
+    max-height: 500px;
+    width: 100%;
+    object-fit: cover; /* Ensures the image covers the area without distortion */
+  }
